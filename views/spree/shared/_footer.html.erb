@@ -1,0 +1,28 @@
+<footer class="theme-footer col-md-12">
+  <div class="row user-view-choice">
+    <a class="col-sm-6 col-xs-12 footer-heading">Shop By Category</a>
+    <a class="col-sm-6 col-xs-12 footer-heading">Shop By Brands</a>
+  </div>
+
+  <div class="row footer-btm-row text-center">
+    <% taxonomy = Spree::Taxonomy.first %>
+    <p class="footer-menu-link">
+      <% taxonomy.root.children.each_with_index do |taxon, i| %>
+        <%= link_to taxon.name, taxon.name.parameterize(separator: '_') %>
+      <% end %>
+    </p>
+
+    <p class="general-info-links">
+      <a href="javaScript:void(0)">TERMS OF USE</a>
+      <a href="javaScript:void(0)">CONTACT US</a>
+      <a href="javaScript:void(0)">FAQ's</a>
+    </p>
+
+    <p class="footer-social-links">
+      <a href="javaScript:void(0)"><i class="fa fa-facebook-square"></i>Facebook</a>
+      <a href="javaScript:void(0)"><i class="fa fa-twitter-square"></i>Twitter</a>
+      <a href="javaScript:void(0)"><i class="fa fa-instagram"></i>Instagram</a>
+    </p>
+    <p>&copy; 2017 - Theme all right reserved</p>
+  </div>
+</footer>
