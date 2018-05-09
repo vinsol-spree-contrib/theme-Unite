@@ -1,14 +1,18 @@
 <footer class="theme-footer col-md-12">
   <div class="row user-view-choice">
-    <a class="col-sm-6 col-xs-12 footer-heading">Shop By Category</a>
-    <a class="col-sm-6 col-xs-12 footer-heading">Shop By Brands</a>
+    <%= link_to 'Shop By Category', :products,  class:'col-sm-6 col-xs-12 footer-heading' %>
+    <%= link_to 'Shop By Brands', :products,  class:'col-sm-6 col-xs-12 footer-heading' %>
   </div>
 
   <div class="row footer-btm-row text-center">
     <% taxonomy = Spree::Taxonomy.first %>
     <p class="footer-menu-link">
       <% taxonomy.root.children.each_with_index do |taxon, i| %>
-        <%= link_to taxon.name, taxon.name.parameterize(separator: '_') %>
+        <% if ( @body_id == 'home-page' ) %>
+          <%= link_to taxon.name, 't/' + taxon.permalink  %>
+        <% else %>
+          <%= link_to taxon.name %>
+        <% end %>
       <% end %>
     </p>
 

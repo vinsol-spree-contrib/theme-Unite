@@ -1,49 +1,35 @@
 <% if @product.taxons.present? %>
-<script type="text/javascript" src="http://www.landmarkmlp.com/js-plugin/owl.carousel/owl-carousel/owl.carousel.js"></script>
   <div class="col-md-12 col-sm-12">
-    <h2 class="product-section-title"><%= Spree.t(:look_for_similar_items) %></h2>
+    <h3 class="product-section-title"><%= Spree.t(:look_for_similar_items) %></h3>
   </div>
-  <div class="list-group similar-box-item related-product-list  " id="similar_items_by_taxon" data-hook data-slider="tab-slider">
-    <% @product.taxons.each do |taxon| %>
-      <div class="item">
-        <div class="col-md-12 col-sm-12 col-xs-12">
-          <div class="panel panel-default">
-            <div class="panel-body text-center">
-              <% product = taxon.products.last %>
-              <% if product.images.present? %>
-                <figure class="text-center figure">
-                  <span class="img-overlay"></span>
-                  <%= image_tag(product.images.last.attachment.url(:large), class:'product-img') %> 
-              </figure> 
-              <% end %>
-              <div class="product-ino-bar text-center">
-                <p itemprop="offers" itemscope itemtype="https://schema.org/Offer" class="item-price">
-                  <strong class="price selling" itemprop="price"><%= display_price(product) %></strong>
-                </p>
-                <%= content_tag(:span, truncate(product.name, length: 50), class: 'info', itemprop: "name", title: product.name) %><br>
-                
+  <div class="col-md-12 col-sm-12">
+    <div class="list-group similar-box-item related-product-list  " id="similar_items_by_taxon" data-hook data-slider="tab-slider">
+      <% @product.taxons.each do |taxon| %>
+        <div class="item col-md-12 col-sm-4">
+            <div class="panel panel-default">
+              <div class="panel-body text-center">
+                <% product = taxon.products.last %>
+                <% if product.images.present? %>
+                  <figure class="text-center figure">
+                    <span class="img-overlay"></span>
+                    <%= image_tag(product.images.last.attachment.url(:large), class:'product-img') %> 
+                </figure> 
+                <% end %>
+                <div class="product-ino-bar text-center">
+                  <p itemprop="offers" itemscope itemtype="https://schema.org/Offer" class="item-price">
+                    <strong class="price selling" itemprop="price"><%= display_price(product) %></strong>
+                  </p>
+                  <%= content_tag(:span, truncate(product.name, length: 50), class: 'info', itemprop: "name", title: product.name) %><br>
+                  
+                </div>
+                <%= link_to taxon.name, seo_url(taxon), class:"link-overlay" %>
               </div>
-              <%= link_to taxon.name, seo_url(taxon), class:"link-overlay" %>
             </div>
-          </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 
 <% end %>
-<script type="text/javascript">
-  $(document).ready(function() {
-  $("#similar_items_by_taxon").owlCarousel({ 
-    autoPlay: 3000, //Set AutoPlay to 3 seconds
-    pagination:false,
-    navigation:true,
-    items : 3,
-    itemsDesktop : [1199,3],
-    itemsDesktopSmall : [991,2],
-    itemsMobile: [480,1]
-  });
 
-});
-</script>
             

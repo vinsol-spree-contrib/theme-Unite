@@ -1,9 +1,11 @@
 @import "custom-checkbox";
 @import "owl_carousel";
+@import url('https://fonts.googleapis.com/css?family=Niconne');
 
 .theme-container {
   &.main-container{
     padding-top:85px;
+   
   }
   .list-group-item{
     &.active{
@@ -145,72 +147,116 @@
     }
   }
 }
-.root-category{
-  &.Men{
+.root-category.category-page{
+  h1.taxon-title{
+    height:250px;
+    width:100%;
+    background-image:url(/vinsol_spree_themes/current/images/category/common/banner-3303831_1920.jpg);
+    background-color: #000;
+    background-size:100%;
+    background-position: center;
+    color: #000; 
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    font-size: 70px;
+    font-family: 'Niconne', cursive;
+    text-shadow: 1px 1px 1px #fff;
+  }
+  &.Men, &.Clothing{
     h1.taxon-title{
-      background-image:url(/vinsol_spree_themes/current/images/category/men/banner-men.jpg);
-      height:250px;
-      width:100%;
-      background-color: #000;
-      background-size:100%;
-      background-position: center;
-      font-size: 0;
+    background-image:url(/vinsol_spree_themes/current/images/category/men/banner-men.jpg);
+    font-size: 0;
     }
   }
   &.New.Arrivals{
     h1.taxon-title{
       background-image:url(/vinsol_spree_themes/current/images/category/new-arrival/1.jpg);
-      height:250px;
-      width:100%;
-      background-color: #000;
-      background-size:100%;
-      background-position: center;
       font-size: 0;
     }
   }
   &.Women{
     h1.taxon-title{
       background-image:url(/vinsol_spree_themes/current/images/category/women/1.jpg);
-      height:250px;
-      width:100%;
-      background-color: #000;
-      background-size:100%;
-      background-position: center;
+      font-size: 0;
+    }
+  }
+  &.Bags{
+    h1.taxon-title{
+      background-image:url(/vinsol_spree_themes/current/images/category/bags/bag-1853847_1920.jpg);
       font-size: 0;
     }
   }
 }
-.leaf-category{
-  &.Men{
+.leaf-category.category-page{
+  h1.taxon-title{
+    height:250px;
+    width:100%;
+    background-color: #000;
+    background-image:url(/vinsol_spree_themes/current/images/category/common/banner-3303831_1920.jpg);    
+    background-size:100%;
+    background-position: center;
+    color: #000; 
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    font-size: 70px;
+    font-family: 'Niconne', cursive;
+    text-shadow: 1px 1px 1px #fff;
+  }
+  &.Men, &.Shirts, &.T-Shirts{
     h1.taxon-title{
-      background-image:url(/vinsol_spree_themes/current/images/category/men/banner-men.jpg);
-      height:250px;
-      width:100%;
-      background-color: #000;
-      background-size:100%;
-      background-position: center;
+      background-image:url(/vinsol_spree_themes/current/images/category/men/banner-men.jpg);    
       font-size: 0;
     }
   }
   &.New.Arrivals{
     h1.taxon-title{
       background-image:url(/vinsol_spree_themes/current/images/category/new-arrival/1.jpg);
-      height:250px;
-      width:100%;
-      background-color: #000;
-      background-size:100%;
-      background-position: center;
       font-size: 0;
     }
   }
   &.Women{
     h1.taxon-title{
       background-image:url(/vinsol_spree_themes/current/images/category/women/1.jpg);
-      height:250px;
-      width:100%;
-      background-color: #000;
-      background-size:100%;
-      background-position: center;
+      font-size: 0;
+    }
+  }
+  &.Bags{
+    h1.taxon-title{
+      background-image:url(/vinsol_spree_themes/current/images/category/bags/bag-1853847_1920.jpg);
+      font-size: 0;
+    }
+  }
+  &.Home-Decor{
+    h1.taxon-title{
+      background-image:url(/vinsol_spree_themes/current/images/category/home-decor/home-decor-banner.jpg);
+      font-size: 0;
+    }
+  }
+  &.Watches{
+    h1.taxon-title{
+      background-image:url(/vinsol_spree_themes/current/images/category/watches/watch-banner.jpg);
+      font-size: 0;
+    }
+  }
+  &.Shoes{
+    h1.taxon-title{
+      background-image:url(/vinsol_spree_themes/current/images/category/shoes/legs-3302442_1920.jpg);
+      font-size: 0;
+    }
+  }
+  &.Kids{
+    h1.taxon-title{
+      background-image:url(/vinsol_spree_themes/current/images/category/kids/kids-banner.jpg);
+      font-size: 0;
+    }
+  }
+  &.Mugs{
+    h1.taxon-title{
+      background-image:url(/vinsol_spree_themes/current/images/category/mugs/morning-819362_1920.jpg);
       font-size: 0;
     }
   }

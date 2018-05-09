@@ -1,4 +1,11 @@
 <% @body_id = 'login' %>
+
+<div class="row no-margin text-center">
+  <div id="login-logo" class="text-center" data-hook>
+    <%= logo %>
+  </div>
+</div>
+    
 <div class="col-md-4 col-sm-6 text-center <%= request.path == spree.login_path ? "col-md-offset-4 col-sm-offset-3" : "" %>">
   <div class="panel panel-default">
       <div class="panel-heading">

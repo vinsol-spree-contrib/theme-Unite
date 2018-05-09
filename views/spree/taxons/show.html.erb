@@ -1,7 +1,7 @@
 <% if @taxon.leaf? %>
-  <% @body_class = "leaf-category #{ @taxon.name }" %>
+  <% @body_class = "category-page leaf-category #{ @taxon.name.gsub(/\s&\s/, '-') }" %>
 <% else %>
-  <% @body_class = "root-category #{ @taxon.name }" %>
+  <% @body_class = "category-page root-category #{ @taxon.name.gsub(/\s&\s/, '-') }" %>
 <% end %>
 
 

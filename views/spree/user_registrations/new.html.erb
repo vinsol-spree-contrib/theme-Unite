@@ -1,4 +1,9 @@
 <% @body_id = 'signup' %>
+<div class="row no-margin text-center">
+  <div id="login-logo" class="text-center" data-hook>
+    <%= logo %>
+  </div>
+</div>
 <%= render :partial => 'spree/shared/error_messages', :locals => { :target => @user } %>
 <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 text-center">
   <div class="panel panel-default">

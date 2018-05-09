@@ -20,6 +20,12 @@
         bottom: 0;
         background: #fff;
         border-color: #df9300;
+        span{
+          text-overflow:ellipsis;
+          white-space: nowrap;
+          display: block;
+          overflow: hidden;
+        }
       }
     }
   }
@@ -60,6 +66,12 @@
         font-weight: 900;  
       }
     }
+    span{
+      text-overflow:ellipsis;
+      white-space: nowrap;
+      display: block;
+      overflow: hidden;
+    }
   }
 }
 
@@ -67,8 +79,8 @@
   #main-image{
     min-height: 350px;
     text-align: center;
-    border: 1px solid #ddd;
     display: flex;
+    margin-bottom: 15px;
     img{
       position: relative;
       max-height: 350px;
@@ -81,6 +93,7 @@
   #thumbnails{
     position: relative;
     margin-bottom: 0px;
+    text-align: center; 
     .tmb-all {
       a{
         display: block;
@@ -94,10 +107,10 @@
 
 }
 .product-detail-tabs-content{
-  padding-top:20px;
-  margin-bottom:20px;
+  margin-bottom:0px;
   h1.product-title{
     margin-bottom:15px;
+    font-weight:normal;
   }
   #product-price{
     
@@ -111,64 +124,31 @@
     }
   }
 }
+#taxon-crumbs{
+  background-color: #f5f5f5;
+  height: 100vh;
+  padding-bottom: 15px;
+  overflow-y:hidden;
+  margin-right: 15px;
+  h3{
+    font-size: 20px;
+  }
+}
 .related-product-list{
-  .panel{
-    max-width:calc(100% - 30px);
-  }
-  .figure{
-    margin-left:-15px;
-    margin-right:-15px;
-    padding-bottom: 68%;
-    margin-top:-15px;
-  }
-  a.link-overlay{
-    position: absolute;
-    font-size: 0;
-    width:100%;
-    height: 100%;
-    left:0;
-    top:0;
-  }
-  .owl-buttons{
-    text-align: center;
-
-    .owl-prev{
-      display: inline-block;
-      font-size: 0;
-      position: relative;
-      width:50px;
-      height: 30px;
-      color: rgba(0,0,0,0.4);
-      &:before{
-        content:"\f104";
-        font-family: fontawesome;
-        position: absolute;
-        font-size: 30px;
-        left: 0;
-      }
-      &:hover{
-        color: rgba(0,0,0,0.8);
-      }
-    }
-    .owl-next{
-      display: inline-block;
-      font-size: 0;
-      position: relative;
-      width:50px;
-      height: 30px;
-      color: rgba(0,0,0,0.4);
-      &:before{
-        content:"\f105";
-        font-family: fontawesome;
-        position: absolute;
-        font-size: 30px;
-        left: 0;
-      }
-      &:hover{
-        color: rgba(0,0,0,0.8);
+  .item{
+    .panel{
+      width:100% !important;
+      height: 100%;
+      margin-bottom:15px;
+      .product-ino-bar{
+        margin-bottom: 30px;
+        .item-price{
+          font-size: 20px;
+        }
       }
     }
   }
+  
 }
 .product-info-properties{
   border:1px solid #ddd;
@@ -247,7 +227,7 @@
         }
         &:after{
           content: "";
-          width: 100%;
+          width: 100%; 
           height: 3px;
           background: #df9300;
           position: absolute;
@@ -314,18 +294,23 @@
   padding: 5px 0px;
   border-bottom:3px solid #df9300;
   margin-right: 15px;
-  
+  transition: all;
   position: relative;
+  &:after{
+    content:'\f177';
+    position: absolute;
+    font-family:fontawesome;
+    top:6px;
+    left:-15px;
+    opacity:0;
+  }
   &:hover{
     border-bottom:3px solid #000;
-    text-decoration: none;
-    padding-left: 20px;
+    text-decoration: none;    
     &:after{
-      content:'\f177';
-      position: absolute;
-      font-family:fontawesome;
-      top:6px;
-      left:0px;
+      opacity:1;
+      left:-20px;
+      transition:.5s all;
     }
   }
 }
@@ -335,17 +320,23 @@
   line-height: 14px;
   padding: 5px 0;
   position: relative;
+  transition: all;
+  &:after{
+    content:'\f178';
+    position: absolute;
+    font-family:fontawesome;
+    top:6px;
+    right:-25px;
+    opacity:0;
+  }
   &:hover{
     border-bottom:3px solid rgba(0, 0, 0,0.6 );
     text-decoration: none;
     color:rgba(0, 0, 0,0.6 );
-    padding-right: 20px;
     &:after{
-      content:'\f178';
-      position: absolute;
-      font-family:fontawesome;
-      top:6px;
-      right:0px;
+      right:-20px;
+      opacity:1;
+      transition:.5s all;
     }
   }
 }
@@ -381,7 +372,12 @@
     outline: none;
 }
 
-
+@media only screen and (max-width: 991px){
+  #taxon-crumbs{
+    height: auto;
+    margin:0px;
+  }
+}
 @media only screen and (max-width: 767px){
   .progress-steps li{
     display: inline-block;

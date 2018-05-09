@@ -295,3 +295,34 @@
       }
   }
 }
+
+#login-logo {
+  margin-left:15px;
+  margin-bottom: 25px;
+  margin-right: 10px;
+  position: relative;
+  z-index: 1;
+  background: url(/vinsol_spree_themes/current/images/logo/logo1.png) 0 0 no-repeat;
+  background-size: 100px;
+  background-position:center -143px;
+  a {
+    width:100px;
+    height: 100px;
+    display: inline-block;
+    background: url(/vinsol_spree_themes/current/images/logo/logo1.png) 0 0 no-repeat;
+    background-size: 100px 81px;
+    background-position: 0 100%;
+    opacity: 0;
+    @include transition(opacity, 0.2s);
+
+    img {
+      display: none;
+    }
+  }
+}
+
+body#login, body#signup{
+  .theme-container{
+    padding-top:15px;
+  }
+}
