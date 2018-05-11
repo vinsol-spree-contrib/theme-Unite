@@ -151,11 +151,11 @@ textarea {
   transform: scale($deg);
 }
 
-@mixin transition($value...) {
-  -moz-transition: $value;
-  -ms-transition: $value;
-  -webkit-transition: $value;
-  transition: $value;
+@mixin transition($all, $time, $how: ease-in-out) {
+  -moz-transition: $all $time $how;
+  -ms-transition: $all $time $how;
+  -webkit-transition: $all $time $how;
+  transition: $all $time $how;
 }
 
 @mixin opacity($value) {
