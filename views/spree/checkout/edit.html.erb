@@ -11,7 +11,7 @@
       <h1 data-hook="checkout_title" class="text-center"><%= Spree.t(:checkout) %></h1>
     </div>
     <div class="clearfix"></div>
-    
+
   </div>
 
   <div class="row" data-hook="checkout_content">
@@ -24,7 +24,7 @@
               <div class="panel-body">
                 <div class="form-group">
                   <%= form.label :email %>
-                  <%= form.text_field :email, class: 'form-control' %>
+                  <%= form.email_field :email, class: 'form-control', required: true %>
                 </div>
               </div>
             </div>
@@ -47,7 +47,3 @@
   Spree.current_order_id = "<%= @order.number %>"
   Spree.current_order_token = "<%= @order.guest_token %>"
 </script>
-
-<% if I18n.locale != :en %>
-  <%= javascript_include_tag 'jquery.validate/localization/messages_' + I18n.locale.to_s.downcase.gsub('-', '') %>
-<% end %>
