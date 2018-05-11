@@ -5,6 +5,7 @@
 .product-list-item, .related-product-list {
   .panel {
     border: none;
+    @include border-radius(0);
     box-shadow: none;
     position: relative;
     overflow: hidden;
