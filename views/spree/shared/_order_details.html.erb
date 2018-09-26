@@ -62,7 +62,7 @@
                 <% if item.variant.images.length == 0 %>
                   <%= link_to mini_image(item.variant.product), item.variant.product %>
                 <% else %>
-                  <%= link_to image_tag(item.variant.images.first.attachment.url(:mini)), item.variant.product %>
+                   <%= link_to image_tag(main_app.url_for(item.variant.images.first.url(:mini))), item.variant.product %>
                 <% end %>
               </td>
               <td data-hook="order_item_description" class="order-item-description">
