@@ -8,8 +8,8 @@
     <%= render partial: 'spree/shared/head' %>
   </head>
   <body class="<%= body_class %>" id="<%= @body_id || 'default' %>" data-hook="body">
-    <%= render partial: 'spree/shared/google_analytics.js' %>
-    <%= render partial: 'spree/shared/trackers/segment/initializer.js' %>
+    <%# render partial: 'spree/shared/google_analytics.js' %>
+    <%# render partial: 'spree/shared/trackers/segment/initializer.js' %>
     <%= render partial: 'spree/shared/header' unless @body_id == 'login' || @body_id == 'signup'%>
 
     <div id="fixed-header-helper"></div>

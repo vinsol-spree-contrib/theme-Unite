@@ -12,7 +12,7 @@
                 <% if product.images.present? %>
                   <figure class="text-center figure">
                     <span class="img-overlay"></span>
-                    <%= image_tag(product.images.last.attachment.url(:large), class:'product-img') %> 
+                    <%= image_tag(main_app.url_for(product.images.last.url(:large)), class:'product-img') %> 
                 </figure> 
                 <% end %>
                 <div class="product-ino-bar text-center">
